@@ -37,7 +37,7 @@ public class application {
                     System.out.print("Quantidade em estoque: ");
                     produto.qtdEstoque = scDados.nextInt();
 
-                    System.out.println("Categoria: ");
+                    System.out.print("Categoria: ");
                     produto.categoria = scDados2.nextLine();
                     // falta transformar em arrayList
                     // tratamento de exceção
@@ -47,7 +47,7 @@ public class application {
                     System.out.println("Produto incluído com sucesso! ");
                     System.out.println(produto.nome + " || " + produto.preco + " || " + produto.qtdEstoque + " || " + produto.categoria);
 
-
+                    scDados2.close();
                     scDados.close();
 
                 case 2:
