@@ -17,9 +17,8 @@ public class application {
         System.out.println("[4] - Importar Mostruário ");
         System.out.println("[5] - Sair ");
         System.out.print("Digite a opção para acessá-la: ");
-        System.out.println("===================================");
         scOption = sc.nextInt();
-
+        System.out.println("===================================");
 
         while (scOption == 1) {
             switch (scOption) {
