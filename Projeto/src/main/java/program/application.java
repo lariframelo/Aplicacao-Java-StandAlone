@@ -9,13 +9,15 @@ public class application {
         Scanner sc = new Scanner(System.in);
         int scOption;
 
-        System.out.println("Loja Online - Cadastro de Produtos");
+        System.out.println(" Loja Online ");
+        System.out.println("===================================");
         System.out.println("[1] - Adicionar novo produto ");
         System.out.println("[2] - Editar Produto ");
         System.out.println("[3] - Excluir Produto ");
         System.out.println("[4] - Importar Mostruário ");
         System.out.println("[5] - Sair ");
         System.out.print("Digite a opção para acessá-la: ");
+        System.out.println("===================================");
         scOption = sc.nextInt();
 
 
