@@ -24,7 +24,6 @@ public class application {
 
                 case 1:
                     Scanner scDados = new Scanner(System.in);
-                    Scanner scDados2 = new Scanner(System.in);
                     Produto produto = new Produto();
 
 
@@ -38,7 +37,7 @@ public class application {
                     produto.qtdEstoque = scDados.nextInt();
 
                     System.out.print("Categoria: ");
-                    produto.categoria = scDados2.nextLine();
+                    produto.categoria = scDados.nextLine();
                     // falta transformar em arrayList
                     // tratamento de exceção
                     // colocar a opção para cancelar a operação
@@ -47,7 +46,7 @@ public class application {
                     System.out.println("Produto incluído com sucesso! ");
                     System.out.println(produto.nome + " || " + produto.preco + " || " + produto.qtdEstoque + " || " + produto.categoria);
 
-                    scDados2.close();
+
                     scDados.close();
 
                 case 2:
