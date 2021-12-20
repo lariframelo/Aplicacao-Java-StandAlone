@@ -74,17 +74,23 @@ public class ProductController {
             p.setNome(nome);
         }
 
-        System.out.println("Descrição do Produto: ");
-        String descricao = scanner.nextLine();
-        if (descricao != null && !descricao.isEmpty()) {
-            p.setDescricao(descricao);
+        System.out.println("Preço:  ");
+        Double preco = scanner.nextDouble();
+        if (preco != null) {
+            p.setPreco(preco);
         }
 
-        // O única chance que o programa tem para entrar no else
-        // é no momento da criação de um produto
+        System.out.println("Quantidade:  ");
+        int qtdEstoque = scanner.nextInt();
+        if (qtdEstoque > 0) {
+            p.setQtdEstoque(qtdEstoque);
+        }
+
+
         if (validaProduto(p)) {
             dao.saveOrUpdateProduto(p);
         }
+
         else {
             System.out.println("Nome ou Descrição precisam ser preenchidos!");
             p = null;

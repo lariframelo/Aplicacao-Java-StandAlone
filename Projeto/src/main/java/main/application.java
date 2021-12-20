@@ -8,7 +8,7 @@ public class application {
         Scanner scanner = new Scanner(System.in);
         int opcao;
 
-        // MUITA ATENÇÃO NESTE BLOCO
+
         while (1 > 0) {
             crudMain.listaMetodos();
             opcao = scanner.nextInt();

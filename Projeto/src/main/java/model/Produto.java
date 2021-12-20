@@ -15,9 +15,8 @@ public class Produto {
         this.preco = preco;
         this.qtdEstoque = qtdEstoque;
         this.categoria = categoria;
-        this.id = id;
-    }
 
+    }
     public Produto(int i) {
     }
 
