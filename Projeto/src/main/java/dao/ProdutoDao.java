@@ -15,14 +15,14 @@ public class ProdutoDao {
 
         public void deletaProduto(Produto produto) {
             produtos.remove(produto);
-            System.out.println("Apagando produto " + produto.getId() + "...");
+            System.out.println("Apagando produto " + produto.getNome() + "...");
             produto = null;
             System.out.println("Produto removido com sucesso!");
         }
 
         public void saveOrUpdateProduto(Produto produto) {
             if (produtos.contains(produto)) {
-                System.out.println("Produto " + produto.getId() +
+                System.out.println("Produto " + produto.getNome() +
                         " atualizado com sucesso!");
             } else {
                 produtos.add(produto);
@@ -30,10 +30,10 @@ public class ProdutoDao {
             }
         }
 
-        public Produto getProduto(int id) {
+        public Produto getProduto(int nome) {
             Produto produto = null;
             for (Produto prod : produtos) {
-                if (prod.getId() == id) {
+                if (prod.getId() == nome) {
                     produto = prod;
                 }
             }

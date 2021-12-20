@@ -60,8 +60,7 @@ public class Produto {
         return null;
     }
 
-    public void setDescricao(String descricao) {
-    }
+
 }
 
 

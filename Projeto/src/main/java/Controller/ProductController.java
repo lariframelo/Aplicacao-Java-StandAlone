@@ -13,8 +13,8 @@ public class ProductController {
 
     public void createProduto() {
         Produto p = new Produto(++autoId);
-
         saveOrUpdate(p);
+        System.out.println("Produto " + p.getNome() + "Incluído com sucesso");
     }
 
 
@@ -55,47 +55,49 @@ public class ProductController {
 
     public void prepareUpdate() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Informe código do Produto que deseja alterar: ");
+        System.out.println("Informe o nome do Produto que deseja alterar: ");
         Produto p = dao.getProduto(scanner.nextInt());
 
         if (p != null) {
             saveOrUpdate(p);
         }
         else {
-            System.out.println("Código de Produto inexistente.");
+            System.out.println("Produto inexistente.");
         }
     }
 
     public void saveOrUpdate(Produto p) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Nome do Produto: ");
+        Scanner scanner2 = new Scanner(System.in);
+        System.out.print("Nome do Produto: ");
         String nome = scanner.nextLine();
         if (nome != null && !nome.isEmpty()) {
             p.setNome(nome);
         }
 
-        System.out.println("Preço:  ");
+        System.out.print("Preço: ");
         Double preco = scanner.nextDouble();
         if (preco != null) {
             p.setPreco(preco);
         }
 
-        System.out.println("Quantidade:  ");
+        System.out.print("Quantidade:  ");
         int qtdEstoque = scanner.nextInt();
         if (qtdEstoque > 0) {
             p.setQtdEstoque(qtdEstoque);
         }
+
+        System.out.print("Categoria:  ");
+        String categoria = scanner2.nextLine();
+        p.setCategoria(categoria);
 
 
         if (validaProduto(p)) {
             dao.saveOrUpdateProduto(p);
         }
 
-        else {
-            System.out.println("Nome ou Descrição precisam ser preenchidos!");
-            p = null;
-            --autoId;
-        }
+
+
     }
 }
 
