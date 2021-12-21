@@ -10,31 +10,29 @@ import java.util.Scanner;
 public class Metodos {
 
 
-    public static void incluirProduto() {
+    public static void incluirProduto(ArrayList<String> listaProduto) {
         //esse método faz todo trabalho de cadastro
-        ArrayList<Produto> listaProduto = new ArrayList<Produto>();
-        Produto p = new Produto();
+
         Scanner ler = new Scanner(System.in);
 
         System.out.printf("\nNome do produto:\n");
         String nome = ler.nextLine();
-        p.setNome(nome);
+
 
         System.out.printf("\nPreço do produto:\n");
         Double preco = ler.nextDouble();
 
-        p.setPreco(preco);
 
         System.out.printf("\nQuantidade:\n");
         int qtdEstoque = ler.nextInt();
-        p.setQtdEstoque(qtdEstoque);
+
 
         System.out.printf("\nCategoria:\n");
         String categoria = ler.nextLine();
-        p.setCategoria(categoria);
+
 
         //gravar os dados no final da lista
-        listaProduto.add(p);
+        listaProduto.add(nome + ";" + preco);
 
     }
 
@@ -69,14 +67,13 @@ public class Metodos {
             System.out.printf("---------------------------------------");
         }
 
-        public boolean calculaPreco() {
-            boolean precoFinal;
-            boolean imposto = (preco/100) * 30;
-            boolean lucro = (preco/100) * 45;
+        public double calculaPreco(double preco){
+            double precoFinal;
+            double imposto = (preco / 100) * 30;
+            double lucro = (preco / 100) * 45;
             precoFinal = preco + imposto + lucro;
 
             return precoFinal;
         }
-
 
 
