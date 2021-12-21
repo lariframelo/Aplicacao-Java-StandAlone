@@ -1,21 +1,16 @@
 package Controller;
 
 
-import dao.ProdutoDao;
+import service.ProdutoService;
 import model.Produto;
 
 import java.util.List;
 import java.util.Scanner;
 
 public class ProductController {
-    int autoId = 0;
-    ProdutoDao dao = new ProdutoDao();
 
-    public void createProduto() {
-        Produto p = new Produto(++autoId);
-        saveOrUpdate(p);
-        System.out.println("Produto " + p.getNome() + "Incluído com sucesso");
-    }
+
+
 
 
     public boolean validaProduto(Produto p) {
