@@ -1,30 +1,43 @@
 package entidade;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 public class Mostruario {
 
-        long código;
+        long codigo;
         long codigo_de_barras;
-        long série;
+        long serie;
         String nome;
-        String descrição;
+        String descricao;
         String categoria;
         Double valor_bruto;
         Double impostos;
-        Date data_de_fabricação;
-        Date data_de_validade;
+        String data_de_fabricacao;
+        String data_de_validade;
         String cor;
         String material;
 
-        public long getCódigo() {
-                return código;
+        public Mostruario(long codigo, long codigo_de_barras, long serie, String nome, String descricao, String categoria, Double valor_bruto, Double impostos, String data_de_fabricacao, String data_de_validade, String cor, String material) {
+                this.codigo = codigo;
+                this.codigo_de_barras = codigo_de_barras;
+                this.serie = serie;
+                this.nome = nome;
+                this.descricao = descricao;
+                this.categoria = categoria;
+                this.valor_bruto = valor_bruto;
+                this.impostos = impostos;
+                this.data_de_fabricacao = data_de_fabricacao;
+                this.data_de_validade = data_de_validade;
+                this.cor = cor;
+                this.material = material;
         }
 
-        public void setCódigo(long código) {
-                this.código = código;
+        public long getCodigo() {
+                return codigo;
+        }
+
+        public void setCodigo(long codigo) {
+                this.codigo = codigo;
         }
 
         public long getCodigo_de_barras() {
@@ -35,12 +48,12 @@ public class Mostruario {
                 this.codigo_de_barras = codigo_de_barras;
         }
 
-        public long getSérie() {
-                return série;
+        public long getSerie() {
+                return serie;
         }
 
-        public void setSérie(long série) {
-                this.série = série;
+        public void setSerie(long serie) {
+                this.serie = serie;
         }
 
         public String getNome() {
@@ -51,12 +64,12 @@ public class Mostruario {
                 this.nome = nome;
         }
 
-        public String getDescrição() {
-                return descrição;
+        public String getDescricao() {
+                return descricao;
         }
 
-        public void setDescrição(String descrição) {
-                this.descrição = descrição;
+        public void setDescricao(String descricao) {
+                this.descricao = descricao;
         }
 
         public String getCategoria() {
@@ -83,19 +96,19 @@ public class Mostruario {
                 this.impostos = impostos;
         }
 
-        public Date getData_de_fabricação() {
-                return data_de_fabricação;
+        public String getData_de_fabricacao() {
+                return data_de_fabricacao;
         }
 
-        public void setData_de_fabricação(Date data_de_fabricação) {
-                this.data_de_fabricação = data_de_fabricação;
+        public void setData_de_fabricacão(String data_de_fabricacão) {
+                this.data_de_fabricacao = data_de_fabricacao;
         }
 
-        public Date getData_de_validade() {
+        public String getData_de_validade() {
                 return data_de_validade;
         }
 
-        public void setData_de_validade(Date data_de_validade) {
+        public void setData_de_validade(String data_de_validade) {
                 this.data_de_validade = data_de_validade;
         }
 
@@ -113,5 +126,13 @@ public class Mostruario {
 
         public void setMaterial(String material) {
                 this.material = material;
+        }
+
+        @Override
+        public String toString() {
+                return "Product [codigo: " + codigo + ", codigo de barras: "+ codigo_de_barras  + ", serie:" + serie + ", nome:" + nome +
+                        ", descrição:" + descricao + ", categoria: " + categoria + ",valor_bruto" + valor_bruto + ",impostos" + impostos +
+                        ", data de fabricação: " + data_de_fabricacao + ",data de validade " + data_de_validade + ", cor:" + cor + ",material:"
+                        +material + "]";
         }
 }

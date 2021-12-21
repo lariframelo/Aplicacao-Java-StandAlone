@@ -1,14 +1,12 @@
 package main;
 
-import service.Metodos;
+import service.Csv;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 //construção do menu
 public class CrudMain {
-    ArrayList<String> listaProduto = new ArrayList<>();
-    Scanner ler = new Scanner(System.in);
+
     int opcao;
 
     public void listaMetodos() {
@@ -30,16 +28,16 @@ public class CrudMain {
 
         switch (opcao) {
             case 1:
-            Metodos.incluirProduto(listaProduto);
+                Csv.importarCsv(); // importar arquivo csv
                 break;
             case 2:
-            Metodos.alterarProduto(listaProduto);
+
                 break;
             case 3:
-            Metodos.excluir(listaProduto);
+
                 break;
             case 4:
-            //aqui importar um arquivo csv
+
                 break;
             case 5:
                 System.out.println("Encerrado");

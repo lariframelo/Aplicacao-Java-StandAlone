@@ -1,8 +1,5 @@
 package main;
 
-import service.Metodos;
-
-import java.util.ArrayList;
 import java.util.Scanner;
 
 //aplicação em si
