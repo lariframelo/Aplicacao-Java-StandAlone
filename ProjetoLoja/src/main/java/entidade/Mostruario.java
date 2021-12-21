@@ -4,20 +4,20 @@ import java.util.Date;
 
 public class Mostruario {
 
-        long codigo;
-        long codigo_de_barras;
-        long serie;
+        String codigo;
+        String codigo_de_barras;
+        String serie;
         String nome;
         String descricao;
         String categoria;
-        Double valor_bruto;
-        Double impostos;
+        String valor_bruto;
+        String impostos;
         String data_de_fabricacao;
         String data_de_validade;
         String cor;
         String material;
 
-        public Mostruario(long codigo, long codigo_de_barras, long serie, String nome, String descricao, String categoria, Double valor_bruto, Double impostos, String data_de_fabricacao, String data_de_validade, String cor, String material) {
+        public Mostruario(String codigo, String codigo_de_barras, String serie, String nome, String descricao, String categoria, String valor_bruto, String impostos, String data_de_fabricacao, String data_de_validade, String cor, String material) {
                 this.codigo = codigo;
                 this.codigo_de_barras = codigo_de_barras;
                 this.serie = serie;
@@ -32,27 +32,27 @@ public class Mostruario {
                 this.material = material;
         }
 
-        public long getCodigo() {
+        public String getCodigo() {
                 return codigo;
         }
 
-        public void setCodigo(long codigo) {
+        public void setCodigo(String codigo) {
                 this.codigo = codigo;
         }
 
-        public long getCodigo_de_barras() {
+        public String getCodigo_de_barras() {
                 return codigo_de_barras;
         }
 
-        public void setCodigo_de_barras(long codigo_de_barras) {
+        public void setCodigo_de_barras(String codigo_de_barras) {
                 this.codigo_de_barras = codigo_de_barras;
         }
 
-        public long getSerie() {
+        public String getSerie() {
                 return serie;
         }
 
-        public void setSerie(long serie) {
+        public void setSerie(String serie) {
                 this.serie = serie;
         }
 
@@ -80,19 +80,19 @@ public class Mostruario {
                 this.categoria = categoria;
         }
 
-        public Double getValor_bruto() {
+        public String getValor_bruto() {
                 return valor_bruto;
         }
 
-        public void setValor_bruto(Double valor_bruto) {
+        public void setValor_bruto(String valor_bruto) {
                 this.valor_bruto = valor_bruto;
         }
 
-        public Double getImpostos() {
+        public String getImpostos() {
                 return impostos;
         }
 
-        public void setImpostos(Double impostos) {
+        public void setImpostos(String impostos) {
                 this.impostos = impostos;
         }
 

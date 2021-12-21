@@ -9,6 +9,7 @@ public class CrudMain {
 
     int opcao;
 
+
     public void listaMetodos() {
 
         System.out.println(" Loja Online ");
@@ -45,6 +46,10 @@ public class CrudMain {
             default:
                 System.out.println("Opção inválida");
                 break;
-        }
+
+            }
+
+
     }
+
 }

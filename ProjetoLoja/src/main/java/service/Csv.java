@@ -17,18 +17,17 @@ public class Csv {
         try (BufferedReader br = new BufferedReader(new FileReader(path))) {
 
             String line = br.readLine();
-            line = br.readLine();
             while (line != null) {
 
                 String[] vect = line.split(",");
-                long codigo = Long.parseLong(vect[0]);
-                long codigo_de_barras = Long.parseLong(vect[1]);
-                long serie = Long.parseLong(vect[2]);
+                String codigo = vect[0];
+                String codigo_de_barras = vect[1];
+                String serie = vect[2];
                 String nome = vect[3];
                 String descricao = vect[4];
                 String categoria = vect[5];
-                Double valor_bruto = Double.parseDouble(vect[6]);
-                Double impostos = Double.parseDouble(vect[7]);
+                String valor_bruto = vect[6];
+                String impostos = vect[7];
                 String data_de_fabricacao = vect[8];
                 String data_de_validade = vect[9];
                 String cor = vect[10];
