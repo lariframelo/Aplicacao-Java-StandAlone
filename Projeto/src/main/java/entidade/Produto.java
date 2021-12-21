@@ -1,29 +1,21 @@
-package model;
-
-import java.util.Collection;
-
+package entidade;
+//classe para estrutura dos atributos
 public class Produto {
-    public String nome;
-    public Double preco;
-    public int qtdEstoque;
-    public String categoria;
-    public int id;
+    //descrição do produto
+        public String nome;
+        public Double preco;
+        public int qtdEstoque;
+        public String categoria;
 
-    public Produto( String nome, Double preco, int qtdEstoque, String categoria, int id) {
-        
-        this.nome = nome;
-        this.preco = preco;
-        this.qtdEstoque = qtdEstoque;
-        this.categoria = categoria;
+    //construtor
+    public Produto() {
 
     }
-    public Produto(int i) {
-    }
 
-    public int getId() {
-        return id;
-    }
 
+
+
+    //métodos getters and setters
     public String getNome() {
         return nome;
     }
@@ -43,6 +35,7 @@ public class Produto {
     public int getQtdEstoque() {
         return qtdEstoque;
     }
+
     public void setQtdEstoque(int qtdEstoque) {
         this.qtdEstoque = qtdEstoque;
     }
@@ -56,11 +49,4 @@ public class Produto {
     }
 
 
-    public Collection<Object> getDescricao() {
-        return null;
-    }
-
-
 }
-
-

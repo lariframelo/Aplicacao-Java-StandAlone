@@ -1,7 +1,9 @@
 package main;
 
-import Controller.ProductController;
+import entidade.ListaProduto;
+import service.Metodos;
 
+//construção do menu
 public class CrudMain {
     ProductController controller = new ProductController();
 
@@ -15,7 +17,7 @@ public class CrudMain {
         System.out.println("[4] - Importar Mostruário ");
         System.out.println("[5] - Sair ");
         System.out.print("Digite a opção para acessá-la: ");
-       ;
+        ;
     }
 
     // Aqui será o método a ser executado será escolhido
@@ -24,17 +26,16 @@ public class CrudMain {
 
         switch (opcao) {
             case 1:
-                controller.createProduto();
+                Metodos.incluirProduto();
                 break;
             case 2:
-                controller.listaProdutos();
-                controller.prepareUpdate();
+                Metodos.editarProduto();
                 break;
             case 3:
-                //aqui eu tenho que ler um arquivo csv
+                Metodos.excluirProduto();
                 break;
             case 4:
-                controller.prepareDelete();
+                Metodos.importarDados();
                 break;
             case 5:
                 System.out.println("Encerrado");
