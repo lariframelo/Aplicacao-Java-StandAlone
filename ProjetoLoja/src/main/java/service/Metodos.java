@@ -1,8 +1,5 @@
 package service;
 
-import entidade.ListaProduto;
-import entidade.Produto;
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -110,7 +107,7 @@ public class Metodos {
 
     public static void importar(ArrayList<String> listaProduto) {
         try {
-            FileReader arq = new FileReader("listaProduto.csv");
+            FileReader arq = new FileReader("//Aplicacao-Java-StandAlone//desafio//mostruario_fabrica.csv");
             BufferedReader lerArq = new BufferedReader(arq);
             String linha = lerArq.readLine();
             while (linha != null) {

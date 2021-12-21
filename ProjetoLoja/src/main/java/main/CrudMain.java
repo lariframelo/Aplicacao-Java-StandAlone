@@ -1,6 +1,5 @@
 package main;
 
-import entidade.ListaProduto;
 import service.Metodos;
 
 import java.util.ArrayList;
@@ -40,7 +39,7 @@ public class CrudMain {
             Metodos.excluir(listaProduto);
                 break;
             case 4:
-
+            //aqui importar um arquivo csv
                 break;
             case 5:
                 System.out.println("Encerrado");
