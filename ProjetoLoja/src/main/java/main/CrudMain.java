@@ -3,9 +3,14 @@ package main;
 import entidade.ListaProduto;
 import service.Metodos;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 //construção do menu
 public class CrudMain {
-    ProductController controller = new ProductController();
+    ArrayList<String> listaProduto = new ArrayList<>();
+    Scanner ler = new Scanner(System.in);
+    int opcao;
 
     public void listaMetodos() {
 
@@ -26,16 +31,16 @@ public class CrudMain {
 
         switch (opcao) {
             case 1:
-                Metodos.incluirProduto();
+            Metodos.incluirProduto(listaProduto);
                 break;
             case 2:
-                Metodos.editarProduto();
+            Metodos.alterarProduto(listaProduto);
                 break;
             case 3:
-                Metodos.excluirProduto();
+            Metodos.excluir(listaProduto);
                 break;
             case 4:
-                Metodos.importarDados();
+
                 break;
             case 5:
                 System.out.println("Encerrado");

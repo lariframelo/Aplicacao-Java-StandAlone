@@ -5,7 +5,9 @@ import java.util.List;
 
 public class ListaProduto {
 
-        ArrayList<Produto> listaProduto = new ArrayList<Produto>();
+        ArrayList<String> listaProduto;
+
+
 
 
 
