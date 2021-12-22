@@ -27,7 +27,7 @@ public class CrudMain {
 
         switch (opcao) {
             case 1:
-                 //incluir Produto
+                 Metodos.cadastraProduto();
                 break;
             case 2:
 
