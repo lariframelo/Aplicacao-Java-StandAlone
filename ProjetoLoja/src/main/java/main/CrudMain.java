@@ -1,8 +1,6 @@
 package main;
 
-import service.Csv;
-
-import java.util.Scanner;
+import service.Metodos;
 
 //construção do menu
 public class CrudMain {
@@ -29,7 +27,7 @@ public class CrudMain {
 
         switch (opcao) {
             case 1:
-                Csv.importarCsv(); // importar arquivo csv
+                 //incluir Produto
                 break;
             case 2:
 
@@ -38,7 +36,7 @@ public class CrudMain {
 
                 break;
             case 4:
-
+                Metodos.importarCsv();
                 break;
             case 5:
                 System.out.println("Encerrado");

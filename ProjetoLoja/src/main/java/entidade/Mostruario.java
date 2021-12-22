@@ -4,20 +4,22 @@ import java.util.Date;
 
 public class Mostruario {
 
-        String codigo;
-        String codigo_de_barras;
-        String serie;
-        String nome;
-        String descricao;
-        String categoria;
-        String valor_bruto;
-        String impostos;
-        String data_de_fabricacao;
-        String data_de_validade;
-        String cor;
-        String material;
+        private String codigo;
+        private String codigo_de_barras;
+        private String serie;
+        private String nome;
+        private String descricao;
+        private String categoria;
+        private String valor_bruto;
+        private String impostos;
+        private String data_de_fabricacao;
+        private String data_de_validade;
+        private String cor;
+        private String material;
+        private String preco;
 
-        public Mostruario(String codigo, String codigo_de_barras, String serie, String nome, String descricao, String categoria, String valor_bruto, String impostos, String data_de_fabricacao, String data_de_validade, String cor, String material) {
+
+        public Mostruario(String codigo, String codigo_de_barras, String serie, String nome, String descricao, String categoria, String valor_bruto, String impostos, String data_de_fabricacao, String data_de_validade, String cor, String material,String preco) {
                 this.codigo = codigo;
                 this.codigo_de_barras = codigo_de_barras;
                 this.serie = serie;
@@ -30,6 +32,7 @@ public class Mostruario {
                 this.data_de_validade = data_de_validade;
                 this.cor = cor;
                 this.material = material;
+                this.preco = preco;
         }
 
         public String getCodigo() {
@@ -127,12 +130,37 @@ public class Mostruario {
         public void setMaterial(String material) {
                 this.material = material;
         }
+        public String getPreco() {
+                return preco;
+        }
+
+        public void setPreco(String preco) {
+                this.preco = preco;
+        }
+
+        public String calculaPreco(String valor_bruto, String impostos) {
+                if (valor_bruto.isEmpty()) {
+                        return preco = "0";
+
+                } else {
+                        Double vb = Double.parseDouble(valor_bruto);
+                        Double imp = Double.parseDouble(impostos);
+                        Double percent = ((vb + imp) * 40) / 100;
+                        Double precoD = vb + imp + percent;
+                        return preco = Double.toString(precoD);
+                }
+
+
+        }
+
+
 
         @Override
         public String toString() {
+
                 return "Product [codigo: " + codigo + ", codigo de barras: "+ codigo_de_barras  + ", serie:" + serie + ", nome:" + nome +
                         ", descrição:" + descricao + ", categoria: " + categoria + ",valor_bruto" + valor_bruto + ",impostos" + impostos +
                         ", data de fabricação: " + data_de_fabricacao + ",data de validade " + data_de_validade + ", cor:" + cor + ",material:"
-                        +material + "]";
+                        +material + ", preço: " + preco +  "]";
         }
 }
