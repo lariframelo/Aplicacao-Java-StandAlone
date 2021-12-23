@@ -7,8 +7,8 @@ import java.io.*;
 import java.util.*;
 
 public class Metodos {
-public static String pathPrincipal =  "\\mostruario_principal.csv";
-public static String pathImport = "\\mostruario_fabrica.csv";
+public static String pathPrincipal =  "\\..mostruario_principal.csv";
+public static String pathImport = "\\..mostruario_fabrica.csv";
 
     List<Mostruario> m = new ArrayList<>();
     Mostruario mostruario = new Mostruario();
