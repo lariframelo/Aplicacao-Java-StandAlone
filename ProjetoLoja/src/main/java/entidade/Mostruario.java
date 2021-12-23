@@ -140,8 +140,8 @@ public class Mostruario {
         public String toString() {
 
                 return "[" + codigo + ","+ codigo_de_barras  + "," + serie + "," + nome +
-                        "," + descricao + ", " + categoria + "," + valor_bruto + "," + impostos +
-                        "," + data_de_fabricacao + "," + data_de_validade + "," + cor + ","
+         "," + descricao + ", " + categoria + "," + valor_bruto + "," + impostos +
+                       "," + data_de_fabricacao + "," + data_de_validade + "," + cor + ","
                         +material + "]";
         }
 }

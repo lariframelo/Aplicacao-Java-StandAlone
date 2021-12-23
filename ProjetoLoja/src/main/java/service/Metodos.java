@@ -171,27 +171,65 @@ public static String pathImport = "\\..mostruario_fabrica.csv";
             }
 
     public static void excluirProdutos() {
-        importarCsvPrincipal();
-        List<Object> mlist = new ArrayList<>();
-        Scanner sc = new Scanner(System.in);
-        imprimirListaComPosicao(mlist);
-        System.out.println("Digite o nome do produto que deseja excluir (completo)");
-        String nome = sc.nextLine();
-        mlist.remove(pesquisarNomesIguais(nome));
+        List<Mostruario> products = new ArrayList<>();
 
+        try (BufferedReader br = new BufferedReader(new FileReader(pathPrincipal))) {
+
+            String line = br.readLine();
+            while(line != null) {
+
+                String[] vect = line.split(",");
+                String codigo = vect[0];
+                String codigo_de_barras = vect[1];
+                String serie = vect[2];
+                String nome = vect[3];
+                String descricao = vect[4];
+                String categoria = vect[5];
+                String valor_bruto = vect[6];
+                String impostos = vect[7];
+                String data_de_fabricacao = vect[8];
+                String data_de_validade = vect[9];
+                String cor = vect[10];
+                String material = vect[11];
+
+                Mostruario m = new Mostruario(codigo,codigo_de_barras,serie,nome,descricao,categoria,valor_bruto,impostos,
+                        data_de_fabricacao,data_de_validade,cor,material);
+                products.add(m);
+
+                line = br.readLine();
+
+            }
+            int position = 0;
+            for (int i = 0 ; i <= products.size(); i++) {
+                position =+ 1;
+            }
+            System.out.println("Products:");
+            for (Mostruario m: products) {
+
+                System.out.println(m + position);
+            }
+
+        }
+        catch (IOException e) {
+            System.out.println("Error:" + e.getMessage());
         }
 
 
 
+}
 
-    public static  void listarProduto(List<Mostruario> mlist) {
+
+
+
+    public int  listarProduto(List<Mostruario> mlist) {
         importarCsvPrincipal();
         List<Mostruario> m = new ArrayList<>();
-        int i, n = m.size();
-        for (i=0; i<n; i++) {
-            System.out.printf("Posição\n", i, m.get(i));
+        int i = 0;
+        for (i=0; i< m.size(); i++) {
+            return i;
             }
-        }
+        return i;
+    }
 
 
         public static int pesquisarNomesIguais(String nome) {
