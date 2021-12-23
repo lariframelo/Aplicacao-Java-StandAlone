@@ -17,7 +17,7 @@ public class Mostruario {
         private String cor;
         private String material;
 
-        public Mostruario(){
+        public Mostruario() {
 
         }
 
@@ -135,13 +135,16 @@ public class Mostruario {
         }
 
 
-
         @Override
         public String toString() {
 
-                return "[" + codigo + ","+ codigo_de_barras  + "," + serie + "," + nome +
-         "," + descricao + ", " + categoria + "," + valor_bruto + "," + impostos +
-                       "," + data_de_fabricacao + "," + data_de_validade + "," + cor + ","
-                        +material + "]";
+                return "[" + codigo + "," + codigo_de_barras + "," + serie + "," + nome +
+                        "," + descricao + ", " + categoria + "," + valor_bruto + "," + impostos +
+                        "," + data_de_fabricacao + "," + data_de_validade + "," + cor + ","
+                        + material + "]";
+
+
         }
+
+
 }

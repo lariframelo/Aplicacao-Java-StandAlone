@@ -125,6 +125,27 @@ public static String pathImport = "\\..mostruario_fabrica.csv";
 
 
     }
+    public static void rescreverCsv(Mostruario m) {
+        String path = "E:\\LARISSA TI\\Repositório GitHub\\Aplicacao-Java-StandAlone\\desafio\\desafio\\mostruario_principal.csv";
+        List<Mostruario> mostruarioList = new ArrayList<Mostruario>();
+
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(path))) {
+
+
+            bw.write(new StringBuilder().append(m.getCodigo()).append(",").append(m.getCodigo_de_barras()).append(",").append(m.getSerie()).append(",").append(m.getNome()).append(",").append(m.getDescricao()).append(",").append(m.getCategoria()).append(",")
+                    .append(m.getValor_bruto()).append(",").append(m.getImpostos()).append(",")
+                    .append(m.getData_de_fabricacao()).append(",").append(m.getData_de_validade()).append(",").append(m.getCor())
+                    .append(",").append(m.getMaterial()).append(",").append(",").toString());
+            bw.newLine();
+
+
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+    }
     public static void cadastraProduto() {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
@@ -172,6 +193,7 @@ public static String pathImport = "\\..mostruario_fabrica.csv";
 
     public static void excluirProdutos() {
         List<Mostruario> products = new ArrayList<>();
+        Scanner sc = new Scanner(System.in);
 
         try (BufferedReader br = new BufferedReader(new FileReader(pathPrincipal))) {
 
@@ -199,20 +221,27 @@ public static String pathImport = "\\..mostruario_fabrica.csv";
                 line = br.readLine();
 
             }
-            int position = 0;
-            for (int i = 0 ; i <= products.size(); i++) {
-                position =+ 1;
-            }
+
             System.out.println("Products:");
             for (Mostruario m: products) {
 
-                System.out.println(m + position);
+                System.out.println(m);
+                System.out.println("Escolha o indice do produto a ser excluído:");
+                int escolha = sc.nextInt();
+                int indice = escolha -1 ;
+                products.remove(indice);
+                exportarCsv(m);
             }
+
+
+
 
         }
         catch (IOException e) {
             System.out.println("Error:" + e.getMessage());
         }
+        String path = "E:\\LARISSA TI\\Repositório GitHub\\Aplicacao-Java-StandAlone\\desafio\\desafio\\mostruario_principal.csv";
+        List<Mostruario> mostruarioList = new ArrayList<Mostruario>();
 
 
 

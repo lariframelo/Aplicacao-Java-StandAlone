@@ -34,7 +34,7 @@ public class CrudMain {
 
                 break;
             case 3:
-
+                Metodos.excluirProdutos();
                 break;
             case 4:
                 Metodos.chamarImport();
