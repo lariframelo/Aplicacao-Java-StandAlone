@@ -68,7 +68,7 @@ public static String pathImport = "\\..mostruario_fabrica.csv";
 
         List<Mostruario> products = new ArrayList<Mostruario>();
 
-        try (BufferedReader br = new BufferedReader(new FileReader(pathPrincipal))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("E:\\LARISSA TI\\Repositório GitHub\\Aplicacao-Java-StandAlone\\desafio\\desafio\\mostruario_principal.csv"))) {
 
             String line = br.readLine();
             while(line != null) {
@@ -230,7 +230,7 @@ public static String pathImport = "\\..mostruario_fabrica.csv";
                 int escolha = sc.nextInt();
                 int indice = escolha -1 ;
                 products.remove(indice);
-                exportarCsv(m);
+                rescreverCsv(m);
             }
 
 
