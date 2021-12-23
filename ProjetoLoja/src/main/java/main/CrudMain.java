@@ -16,7 +16,8 @@ public class CrudMain {
         System.out.println("[2] - Editar Produto ");
         System.out.println("[3] - Excluir Produto ");
         System.out.println("[4] - Importar Mostruário ");
-        System.out.println("[5] - Sair ");
+        System.out.println("[5] - Listar Produto  ");
+        System.out.println("[6] - Sair ");
         System.out.print("Digite a opção para acessá-la: ");
         ;
     }
@@ -36,11 +37,13 @@ public class CrudMain {
 
                 break;
             case 4:
-                Metodos.importarCsv();
+                Metodos.chamarImport();
                 break;
             case 5:
-                System.out.println("Encerrado");
-                System.exit(0);
+
+                break;
+            case 6:
+                break;
             default:
                 System.out.println("Opção inválida");
                 break;

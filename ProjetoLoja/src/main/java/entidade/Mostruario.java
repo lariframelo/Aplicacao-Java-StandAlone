@@ -16,12 +16,13 @@ public class Mostruario {
         private String data_de_validade;
         private String cor;
         private String material;
-        private String preco;
-        private String qtdEstoque;
+
+        public Mostruario(){
+
+        }
 
 
-
-        public Mostruario(String codigo, String codigo_de_barras, String serie, String nome, String descricao, String categoria, String valor_bruto, String impostos, String data_de_fabricacao, String data_de_validade, String cor, String material, String preco, String qtdEstoque) {
+        public Mostruario(String codigo, String codigo_de_barras, String serie, String nome, String descricao, String categoria, String valor_bruto, String impostos, String data_de_fabricacao, String data_de_validade, String cor, String material) {
                 this.codigo = codigo;
                 this.codigo_de_barras = codigo_de_barras;
                 this.serie = serie;
@@ -34,8 +35,7 @@ public class Mostruario {
                 this.data_de_validade = data_de_validade;
                 this.cor = cor;
                 this.material = material;
-                this.preco = preco;
-                this.qtdEstoque = qtdEstoque;
+
         }
 
         public String getCodigo() {
@@ -133,41 +133,15 @@ public class Mostruario {
         public void setMaterial(String material) {
                 this.material = material;
         }
-        public String getPreco() {
-                return preco;
-        }
 
-        public void setPreco(String preco) {
-                this.preco = preco;
-        }
-
-        public String calculaPreco(String valor_bruto, String impostos) {
-                if (preco.isEmpty()) {
-                        Double vb = Double.parseDouble(valor_bruto);
-                        Double imp = Double.parseDouble(impostos);
-                        Double percent = ((vb + imp) * 40) / 100;
-                        Double precoD = vb + imp + percent;
-                        return preco = Double.toString(precoD);
-
-                } else {
-                        return preco = "0";
-        }
-        }
-        public String getQtdEstoque() {
-                return qtdEstoque;
-        }
-
-        public void setQtdEstoque(String qtdEstoque) {
-                this.qtdEstoque = qtdEstoque;
-        }
 
 
         @Override
         public String toString() {
 
-                return "Product [codigo: " + codigo + ", codigo de barras: "+ codigo_de_barras  + ", serie:" + serie + ", nome:" + nome +
-                        ", descrição:" + descricao + ", categoria: " + categoria + ",valor_bruto" + valor_bruto + ",impostos" + impostos +
-                        ", data de fabricação: " + data_de_fabricacao + ",data de validade " + data_de_validade + ", cor:" + cor + ",material:"
-                        +material + ", preço: " + preco +  "]";
+                return "[" + codigo + ","+ codigo_de_barras  + "," + serie + "," + nome +
+                        "," + descricao + ", " + categoria + "," + valor_bruto + "," + impostos +
+                        "," + data_de_fabricacao + "," + data_de_validade + "," + cor + ","
+                        +material + "]";
         }
 }
