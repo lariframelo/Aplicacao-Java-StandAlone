@@ -1,17 +1,19 @@
-package service;
+
+        package service;
 
 
-import entidade.Mostruario;
+        import entidade.Mostruario;
 
-import java.io.*;
-import java.util.*;
+        import java.io.*;
+        import java.util.*;
 
 public class Metodos {
-public static String pathPrincipal =  "\\..mostruario_principal.csv";
-public static String pathImport = "\\..mostruario_fabrica.csv";
+    public static String pathPrincipal =  "\\..mostruario_principal.csv";
+    public static String pathImport = "\\..mostruario_fabrica.csv";
 
-    List<Mostruario> m = new ArrayList<>();
-    Mostruario mostruario = new Mostruario();
+    //List<Mostruario> m = new ArrayList<>();
+    //Mostruario mostruario = new Mostruario();
+
     public static void importarCsv(String path) {
 
         List<Mostruario> products = new ArrayList<Mostruario>();
@@ -111,11 +113,11 @@ public static String pathImport = "\\..mostruario_fabrica.csv";
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(path,true))) {
 
 
-                bw.write(new StringBuilder().append(m.getCodigo()).append(",").append(m.getCodigo_de_barras()).append(",").append(m.getSerie()).append(",").append(m.getNome()).append(",").append(m.getDescricao()).append(",").append(m.getCategoria()).append(",")
-                        .append(m.getValor_bruto()).append(",").append(m.getImpostos()).append(",")
-                        .append(m.getData_de_fabricacao()).append(",").append(m.getData_de_validade()).append(",").append(m.getCor())
-                        .append(",").append(m.getMaterial()).append(",").append(",").toString());
-                bw.newLine();
+            bw.write(new StringBuilder().append(m.getCodigo()).append(",").append(m.getCodigo_de_barras()).append(",").append(m.getSerie()).append(",").append(m.getNome()).append(",").append(m.getDescricao()).append(",").append(m.getCategoria()).append(",")
+                    .append(m.getValor_bruto()).append(",").append(m.getImpostos()).append(",")
+                    .append(m.getData_de_fabricacao()).append(",").append(m.getData_de_validade()).append(",").append(m.getCor())
+                    .append(",").append(m.getMaterial()).append(",").append(",").toString());
+            bw.newLine();
 
 
         }
@@ -177,19 +179,19 @@ public static String pathImport = "\\..mostruario_fabrica.csv";
         System.out.println("[2] CANCELAR E VOLTAR AO MENU");
         int opcao = sc.nextInt();
 
-            switch (opcao) {
-                case 1: Mostruario m = new Mostruario(codigo,codigo_de_barras,serie,nome,descricao,categoria,
-                        valor_bruto,impostos,data_de_fabricacao,data_de_validade,cor,material);
-                    mostruarioList.add(m);
-                    exportarCsv(m);
-                    System.out.println("Produto cadastrado com sucesso !");
-                    break;
+        switch (opcao) {
+            case 1: Mostruario m = new Mostruario(codigo,codigo_de_barras,serie,nome,descricao,categoria,
+                    valor_bruto,impostos,data_de_fabricacao,data_de_validade,cor,material);
+                mostruarioList.add(m);
+                exportarCsv(m);
+                System.out.println("Produto cadastrado com sucesso !");
+                break;
 
-                case 2:
+            case 2:
 
 
-                    }
-            }
+        }
+    }
 
     public static void excluirProdutos() {
         List<Mostruario> products = new ArrayList<>();
@@ -245,7 +247,7 @@ public static String pathImport = "\\..mostruario_fabrica.csv";
 
 
 
-}
+    }
 
 
 
@@ -256,25 +258,25 @@ public static String pathImport = "\\..mostruario_fabrica.csv";
         int i = 0;
         for (i=0; i< m.size(); i++) {
             return i;
-            }
+        }
         return i;
     }
 
 
-        public static int pesquisarNomesIguais(String nome) {
-            List<Mostruario> mlist = new ArrayList<>();
-            int getIndex = mlist.indexOf(nome);
-            return getIndex;
-
-            }
-
-public static void imprimirListaComPosicao (List <Object> m ) {
-
-    for(int i = 0; i<m.size(); i++){
-        System.out.println("posicao " + (i+1) + " = " + m );
+    public static int pesquisarNomesIguais(String nome) {
+        List<Mostruario> mlist = new ArrayList<>();
+        int getIndex = mlist.indexOf(nome);
+        return getIndex;
 
     }
-}
+
+    public static void imprimirListaComPosicao (List <Object> m ) {
+
+        for(int i = 0; i<m.size(); i++){
+            System.out.println("posicao " + (i+1) + " = " + m );
+
+        }
+    }
 
 
 
@@ -282,6 +284,3 @@ public static void imprimirListaComPosicao (List <Object> m ) {
 
 
 }
-
-
-
