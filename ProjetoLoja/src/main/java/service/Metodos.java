@@ -15,10 +15,12 @@ public class Metodos {
     //Mostruario mostruario = new Mostruario();
 
     public static void importarCsv(String path) {
-
-        List<Mostruario> products = new ArrayList<Mostruario>();
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        Mostruario [] vetor = new Mostruario[n];
 
         try (BufferedReader br = new BufferedReader(new FileReader(pathImport))) {
+
 
             String line = br.readLine();
             while (line != null) {

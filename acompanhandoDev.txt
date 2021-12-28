@@ -1,0 +1,7 @@
+28/12 - Descobri testando o código que o problema estava
+na forma de importar o csv, ele aloca de forma errada,
+sei o que tenho que fazer agora, tenho que alocar 
+cada produto no modelo referência, só preciso descobrir como 
+definir o meu contador pelo número de linhas lidas no arquivo. 
+
+ 
