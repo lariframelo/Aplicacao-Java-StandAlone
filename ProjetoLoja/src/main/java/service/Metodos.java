@@ -5,69 +5,72 @@
         import entidade.Mostruario;
 
         import java.io.*;
+        import java.text.ParseException;
         import java.util.*;
 
 public class Metodos {
     public static String pathPrincipal =  "\\..mostruario_principal.csv";
     public static String pathImport = "\\..mostruario_fabrica.csv";
 
-    //List<Mostruario> m = new ArrayList<>();
-    //Mostruario mostruario = new Mostruario();
 
-    public static void importarCsv(String path) {
+    public static void importarCsv() throws ParseException {
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        Mostruario [] vetor = new Mostruario[n];
+        List<Mostruario> list = new ArrayList<>();
+        System.out.print("Digite o local do arquivo:");
+        String sourceFileStr = sc.nextLine();
+        File sourceFile = new File(sourceFileStr);
+        String sourceFolderStr = sourceFile.getParent();
 
-        try (BufferedReader br = new BufferedReader(new FileReader(pathImport))) {
+        boolean sucess = new File(sourceFolderStr + "\\out").mkdir();
+        String targetFileStr = sourceFolderStr + "\\out\\sumary.csv";
 
-
-            String line = br.readLine();
-            while (line != null) {
-
-                String[] vect = line.split(",");
-                String codigo = vect[0];
-                String codigo_de_barras = vect[1];
-                String serie = vect[2];
-                String nome = vect[3];
-                String descricao = vect[4];
-                String categoria = vect[5];
-                String valor_bruto = vect[6];
-                String impostos = vect[7];
-                String data_de_fabricacao = vect[8];
-                String data_de_validade = vect[9];
-                String cor = vect[10];
-                String material = vect[11];
+        try (BufferedReader br = new BufferedReader(new FileReader(sourceFileStr))) {
 
 
-                Mostruario m = new Mostruario(codigo, codigo_de_barras, serie, nome, descricao, categoria, valor_bruto, impostos,
-                        data_de_fabricacao, data_de_validade, cor, material);
+            String itemCsv = br.readLine();
+            while (itemCsv != null) {
 
-                products.add(m);
+                String[] fields = itemCsv.split(",");
+                String codigo = fields[0];
+                String codigo_de_barras = fields[1];
+                String serie = fields[2];
+                String nome = fields[3];
+                String descricao = fields[4];
+                String categoria = fields[5];
+                String valor_bruto = fields[6];
+                String impostos= fields[7];
+                String data_de_fabricacao = fields[8];
+                String data_de_validade = fields[9];
+                String cor = fields[10];
+                String material = fields[11];
 
-                line = br.readLine();
-                exportarCsv(m);
+                list.add(new Mostruario(codigo, codigo_de_barras, serie, nome, descricao, categoria, valor_bruto, impostos,
+                        data_de_fabricacao, data_de_validade, cor, material));
+                itemCsv = br.readLine();
+
 
             }
+            try (BufferedWriter bw = new BufferedWriter(new FileWriter(targetFileStr))) {
 
-            System.out.println("Products:");
-            for (Mostruario m: products) {
-                System.out.println(m);
+                for (Mostruario m : list) {
+                    bw.write(m.getNome() + ","
+                            + m.getCategoria() + "," + m.qtdDefeault());
+                    bw.newLine();
+                }
+
+                System.out.println(targetFileStr + "Criado!");
+
+            } catch (IOException e) {
+                System.out.println("Error ao escrever arquivo:" + e.getMessage());
             }
-
+        } catch (IOException e) {
+            System.out.println("Erro ao escrever arquivo:" + e.getMessage());
         }
-        catch (IOException e) {
-            System.out.println("Error:" + e.getMessage());
-        }
+        sc.close();
     }
-    public static void chamarImport() {
-        Scanner sc = new Scanner(System.in);
-        String path;
-        System.out.print("Digite o local do arquivo: ");
-        path = sc.nextLine();
-        importarCsv(path);
 
-    }
+
+/*
     public static void importarCsvPrincipal() {
 
         List<Mostruario> products = new ArrayList<Mostruario>();
@@ -84,7 +87,7 @@ public class Metodos {
                 String nome = vect[3];
                 String descricao = vect[4];
                 String categoria = vect[5];
-                String valor_bruto = vect[6];
+                String valor_bruto = Integer.parseInt()vect[6];
                 String impostos = vect[7];
                 String data_de_fabricacao = vect[8];
                 String data_de_validade = vect[9];
@@ -150,6 +153,8 @@ public class Metodos {
 
 
     }
+
+
     public static void cadastraProduto() {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
@@ -282,7 +287,7 @@ public class Metodos {
 
 
 
-
+*/
 
 
 }

@@ -4,4 +4,13 @@ sei o que tenho que fazer agora, tenho que alocar
 cada produto no modelo referência, só preciso descobrir como 
 definir o meu contador pelo número de linhas lidas no arquivo. 
 
+29/12 - vamos testar a minha teoria 
+Descobri vendo os videos do curso que o problema não estava na forma 
+como produto foi instanciada, mas na forma como foi lidos os arquivos
+e feito os métodos de importar, cadastrar, exportar. Agora estou com 
+um problema ao ler o arquivo em si, estou revendo os videos sobre
+manuseio de pastas e caminho do arquivo para descobrir o motivo.
+ 
+
+
  

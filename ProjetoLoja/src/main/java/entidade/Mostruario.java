@@ -134,17 +134,21 @@ public class Mostruario {
                 this.material = material;
         }
 
-
-        @Override
-        public String toString() {
-
-                return "[" + codigo + "," + codigo_de_barras + "," + serie + "," + nome +
-                        "," + descricao + ", " + categoria + "," + valor_bruto + "," + impostos +
-                        "," + data_de_fabricacao + "," + data_de_validade + "," + cor + ","
-                        + material + "]";
-
+        public String qtdDefeault() {
+                String qtd = "1";
+                return qtd;
 
         }
+        /*
+        public double preco() {
+                double custo = valor_bruto + impostos;
+                double persent = (custo/100) * 45;
+                double precoFinal = custo + persent;
 
+                return precoFinal;
+        }
+
+
+         */
 
 }

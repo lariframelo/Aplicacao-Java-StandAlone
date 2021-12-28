@@ -2,6 +2,8 @@ package main;
 
 import service.Metodos;
 
+import java.text.ParseException;
+
 //construção do menu
 public class CrudMain {
 
@@ -24,20 +26,20 @@ public class CrudMain {
 
     // Aqui será o método a ser executado será escolhido
     // de acordo com a opção passada pelo teclado
-    public void executeMetodo(int opcao) {
+    public void executeMetodo(int opcao) throws ParseException {
 
         switch (opcao) {
             case 1:
-                 Metodos.cadastraProduto();
+
                 break;
             case 2:
 
                 break;
             case 3:
-                Metodos.excluirProdutos();
+
                 break;
             case 4:
-                Metodos.chamarImport();
+                Metodos.importarCsv();
                 break;
             case 5:
 
