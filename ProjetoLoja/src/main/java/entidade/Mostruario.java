@@ -17,9 +17,6 @@ public class Mostruario {
         private String cor;
         private String material;
 
-        public Mostruario() {
-
-        }
 
 
         public Mostruario(String codigo, String codigo_de_barras, String serie, String nome, String descricao, String categoria, String valor_bruto, String impostos, String data_de_fabricacao, String data_de_validade, String cor, String material) {
@@ -35,6 +32,10 @@ public class Mostruario {
                 this.data_de_validade = data_de_validade;
                 this.cor = cor;
                 this.material = material;
+
+        }
+
+        public Mostruario(String nome, String preco, String qtdEstoque, String categoria) {
 
         }
 
@@ -133,12 +134,25 @@ public class Mostruario {
         public void setMaterial(String material) {
                 this.material = material;
         }
+        /*
+        public String getPreco(String vb, String imp) {
+                double valorB = Integer.parseInt(getImpostos());
+                double impostos = Integer.parseInt(getImpostos());
+                double gasto = valorB + impostos;
+                double persent = (gasto/100)*45;
+                double precototal = gasto + persent;
+                String preco = Double.toString(precototal);
+                return preco;
+        }
 
+         */
         public String qtdDefeault() {
                 String qtd = "1";
                 return qtd;
 
         }
+
+
         /*
         public double preco() {
                 double custo = valor_bruto + impostos;

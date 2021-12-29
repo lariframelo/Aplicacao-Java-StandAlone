@@ -11,6 +11,34 @@ e feito os métodos de importar, cadastrar, exportar. Agora estou com
 um problema ao ler o arquivo em si, estou revendo os videos sobre
 manuseio de pastas e caminho do arquivo para descobrir o motivo.
  
+está dando uma excessão 
+Digite a opção para acessá-la: Exception in thread "main" java.util.NoSuchElementException
+	at java.util.Scanner.throwFor(Scanner.java:862)
+	at java.util.Scanner.next(Scanner.java:1485)
+	at java.util.Scanner.nextInt(Scanner.java:2117)
+	at java.util.Scanner.nextInt(Scanner.java:2076)
+	at main.application.main(application.java:17)
+ou seja, no meu scanner, acredito que vou encontrar a resposta nesse manuseio
+dos arquivos.Quando eu tiro o scanner o import acontece naturalmente, portanto 
+é um problema em ler o arquivo. 
+
+check-list
+o que foi feito hoje ?
+- Foi resolvido problema de importação;
+- Foi resolvido o problema de listar ;
+- Foi construída a estrutura dos métodos, mostrando e
+captando a posição para o usuário fazer a alteração no 
+arquivo ;
+- Cadastro funcionando corretamente;
+
+o que não foi resolvido?
+- A entrada do path via Scanner no importaCsv();
+- O cálculo do preço e a instituição dele no csv principal;
+(capturar de um csv, fazer o cálculo e depois jogar pra dentro
+do csv principal) obs, o cálculo está pronto, estou com problema
+é de declaração de variável(aparentemente)
+- O menu de saída nas opções 1,2,3 do menu.
+- A ação de excluir e editar.
 
 
  

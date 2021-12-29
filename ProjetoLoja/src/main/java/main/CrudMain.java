@@ -30,19 +30,19 @@ public class CrudMain {
 
         switch (opcao) {
             case 1:
-
+                Metodos.cadastrarProduto();
                 break;
             case 2:
-
+                Metodos.editarProduto();
                 break;
             case 3:
-
+                Metodos.excluirProduto();
                 break;
             case 4:
                 Metodos.importarCsv();
                 break;
             case 5:
-
+                Metodos.listarCsv();
                 break;
             case 6:
                 break;
