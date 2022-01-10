@@ -17,9 +17,11 @@ public class Metodos {
     public static void importarCsv() {
         Scanner sc = new Scanner(System.in);
         List<Mostruario> list = new ArrayList<>();
-        //System.out.print("Digite o local do arquivo:");
-        String sourceFileStr = "E:\\LARISSA TI\\Repositório GitHub\\Aplicacao-Java-StandAlone\\ProjetoLoja\\out\\mostruario_fabrica.csv";
+        System.out.print("Digite o local do arquivo:");
+        String sourceFileStr = sc.nextLine();
+        sc.next();
 
+        //"E:\\LARISSA TI\\Repositório GitHub\\Aplicacao-Java-StandAlone\\ProjetoLoja\\out\\mostruario_fabrica.csv";
         File sourceFile = new File(sourceFileStr);
         String sourceFolderStr = sourceFile.getParent();
 
@@ -69,6 +71,7 @@ public class Metodos {
         } catch (IOException e) {
             System.out.println("Erro ao escrever arquivo:" + e.getMessage());
         }
+        sc.close();
 
     }
 
