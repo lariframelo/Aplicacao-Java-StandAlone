@@ -263,10 +263,20 @@ public class Metodos {
             int posicao = escolha;
             Product index = list.get(posicao);
             System.out.println("Excluir : " + index + " ?");
-            //System.out.println("[1] EXCLUIR PRODUTO");
-            //System.out.println("[2] CANCELAR E VOLTAR AO MENU");
-            //int opcao = sc.nextInt();
-            list.remove(index);
+            System.out.println("[1] EXCLUIR PRODUTO");
+            System.out.println("[2] CANCELAR E VOLTAR AO MENU");
+            int opcao = sc.nextInt();
+            switch (opcao) {
+                case 1:
+                    list.remove(index);
+                    break;
+
+                case 2:
+                    break;
+            }
+
+
+
             sc.close();
         }
     }
